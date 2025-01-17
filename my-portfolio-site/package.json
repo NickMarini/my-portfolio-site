@@ -1,0 +1,35 @@
+{
+  "name": "my-portfolio-site",
+  "version": "1.0.0",
+  "description": "A simple portfolio site built with Next.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "keywords": [
+    "nextjs",
+    "portfolio",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/css-modules": "^1.0.5",
+    "@types/node": "22.10.7",
+    "@types/react": "^19.0.7",
+    "typescript": "latest"
+  },
+  "homepage": "https://yourusername.github.io/my-portfolio-site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/my-portfolio-site.git"
+  }
+}
