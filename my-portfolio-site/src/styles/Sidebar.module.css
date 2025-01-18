@@ -5,7 +5,7 @@
   height: 100%;
   width: 250px;
   background-color: #001f3f; /* Navy blue background */
-  color: #fff;
+  color: #f0f0f0;
   transition: transform 0.3s ease;
   z-index: 1000;
 }

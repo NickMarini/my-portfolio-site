@@ -7,13 +7,14 @@ html, body {
     height: 100%; /* Ensure html and body take full height */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    background-color: #001f3f; /* Navy blue background */
+    background-color: #f0f0f0; /* Off White background */
     color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
+    color: #001f3f; /* Navy blue text */
 }
 
 a {
@@ -33,11 +34,12 @@ ul {
 
 .main-content {
     flex-grow: 1;
-    padding: 0px 40px 20px 20px; /* Add padding to all sides */
+    padding: 40px 40px 20px 20px; /* Add padding to all sides */
     transition: margin-left 0.3s ease;
     background-color: #f0f0f0; /* Light background for main content */
     color: #001f3f; /* Navy blue text */
     margin-left: 220px; /* Default margin-left */
+    margin-right: 60px; /* Add margin to the right */
     height: 100%; /* Ensure main content takes full height */
     width: 100%;
     box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
@@ -49,4 +51,137 @@ ul {
 
 .app-container.sidebar-closed .main-content {
     margin-left: 40px; /* 40px margin when sidebar is closed */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%; /* Adjust based on sidebar width */
+    background-color: #f0f0f0;
+    color: #333;
+    padding-top: 60px; /* Move content down */
+    padding-left: 60px; /* Move content closer to the sidebar */
+    margin: 0; /* Ensure no extra margin */
+    border: none; /* Ensure no border */
+}
+
+.title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+    color: #001f3f; /* Navy blue text */
+}
+
+.section {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure sections take full width */
+}
+
+.description {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.subsection {
+    margin-left: 20px;
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs button {
+    background: none;
+    border: none;
+    color: #001f3f;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.breadcrumbs button.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.skills-breadcrumbs {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.skills-breadcrumbs button {
+    background: none;
+    border: none;
+    color: #0070f3;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.skills-breadcrumbs button.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.collapsible-section {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 100%; /* Ensure collapsible sections take full width */
+}
+
+.collapsible-section .heading4 {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    font-size: 1.25rem;
+    color: #001f3f; /* Navy blue text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible-section .heading4:hover {
+    background-color: #e7e7e7;
+}
+
+.collapsible-content {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.collapsible-content ul {
+    padding-left: 20px;
+}
+
+.collapsible-content li {
+    margin-bottom: 10px;
+}
+
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

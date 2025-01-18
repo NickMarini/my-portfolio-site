@@ -46,9 +46,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         <Link href="/resume" className={styles.navLink}>
           Resume
         </Link>
-        <Link href="/projects" className={styles.navLink}>
+        {/* <Link href="/projects" className={styles.navLink}>
           Projects
-        </Link>
+        </Link> */}
       </nav>
     </aside>
   );
