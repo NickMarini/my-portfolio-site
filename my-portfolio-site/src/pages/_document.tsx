@@ -12,8 +12,6 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <meta name="description" content="My Portfolio Site" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="stylesheet" href="/assets/css/style.css" />
         </Head>
         <body>
           <Main />

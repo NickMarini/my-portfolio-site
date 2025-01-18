@@ -15,7 +15,7 @@ const Home: React.FC = () => {
           This is a simple portfolio site showcasing my work and projects.
         </p>
         <h1 className={styles.title}>About Me</h1>
-        <p>Welcome to my portfolio! I am a passionate developer with experience in building web applications.</p>
+        <p>I am a passionate developer with experience in building web applications.</p>
         <p>Here you can find my projects and learn more about my skills and experiences.</p>
       </main>
     </div>

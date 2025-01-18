@@ -7,7 +7,7 @@ html, body {
     height: 100%;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    background-color: #e0e7ff; /* Light blue background */
+    background-color: #001f3f; /* Navy blue background */
     color: #333;
 }
 
@@ -32,7 +32,18 @@ ul {
 }
 
 .main-content {
-    margin-left: 250px; /* Adjust based on sidebar width */
-    width: 100%; /* Adjust based on sidebar width */
-    height: 100%; /* Ensure the main content takes full height */
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    background-color: #f0f0f0; /* Light background for main content */
+    color: #001f3f; /* Navy blue text */
+    /* margin-left: 310px; 250px for sidebar + 60px margin */
+}
+
+.app-container.sidebar-open .main-content {
+    margin-left: 270px; /* 250px for sidebar + 60px margin */
+}
+
+.app-container.sidebar-closed .main-content {
+    margin-left: 20px; /* 60px margin when sidebar is closed */
 }
