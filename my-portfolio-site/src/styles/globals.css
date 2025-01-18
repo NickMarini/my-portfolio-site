@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; /* Ensure html and body take full height */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     background-color: #001f3f; /* Navy blue background */
@@ -28,22 +28,25 @@ ul {
 
 .app-container {
     display: flex;
-    height: 100vh; /* Ensure the container takes full height */
+    height: 100%; /* Ensure the container takes full height */
 }
 
 .main-content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 0px 40px 20px 20px; /* Add padding to all sides */
     transition: margin-left 0.3s ease;
     background-color: #f0f0f0; /* Light background for main content */
     color: #001f3f; /* Navy blue text */
-    /* margin-left: 310px; 250px for sidebar + 60px margin */
+    margin-left: 220px; /* Default margin-left */
+    height: 100%; /* Ensure main content takes full height */
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
 .app-container.sidebar-open .main-content {
-    margin-left: 270px; /* 250px for sidebar + 60px margin */
+    margin-left: 270px; /* 250px for sidebar + 20px margin */
 }
 
 .app-container.sidebar-closed .main-content {
-    margin-left: 20px; /* 60px margin when sidebar is closed */
+    margin-left: 40px; /* 40px margin when sidebar is closed */
 }
