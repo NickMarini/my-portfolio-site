@@ -1,99 +1,281 @@
+/* This file contains global CSS styles that apply to the entire application. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    @apply m-0 p-0 w-full h-full overflow-x-hidden font-sans bg-background text-text;
+}
+
+body.sidebar-open {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+}
+
+body.sidebar-closed {
+    margin-left: 40px;
+    width: calc(100% - 40px);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply m-0 p-0 text-primary border-b-2 border-primary;
+}
+
+h3 {
+    @apply text-2xl font-bold text-primary mb-2 border-b-2 border-primary pb-2;
+}
+
+a {
+    @apply text-inherit no-underline;
+}
+
+ul {
+    @apply list-none p-0;
+}
+
+.app-container {
+    @apply flex h-full relative;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.app-container.sidebar-open {
+    width: 100%;
+    margin-left: 270px;
+}
+
+.app-container.sidebar-closed {
+    width: 100%;
+    margin-left: 40px;
+}
+
+.main-content {
+    @apply flex-grow bg-background text-primary;
+    padding: 40px;
+    margin-left: 80px;
+    width: calc(100% - 80px);
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.app-container.sidebar-open .main-content {
+    margin-left: 310px;
+    width: calc(100% - 310px);
+}
+
+.app-container.sidebar-closed .main-content {
+    margin-left: 80px;
+    width: 100%;
+}
+
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 250px;
-  background-color: #001f3f; /* Navy blue background */
-  color: #f0f0f0;
-  transition: transform 0.3s ease;
-  z-index: 1000;
+    @apply fixed top-0 left-0 h-full bg-white z-10;
+    width: 40px;
+    transition: width 0.3s ease-in-out;
 }
 
-.sidebar.closed {
-  transform: translateX(-100%);
+.app-container.sidebar-open .sidebar {
+    width: 270px;
 }
 
-.sidebar.open {
-  transform: translateX(0);
+.container {
+    @apply flex flex-col items-start justify-start h-screen;
+    width: 100%;
+    background-color: #f0f0f0;
+    color: #333;
+    padding-top: 60px;
+    padding-left: 60px;
+    margin: 0;
+    border: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.toggleButton {
-  position: absolute;
-  top: 10px;
-  right: -30px;
-  background-color: #001f3f; /* Navy blue background */
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
+.app-container.sidebar-open .container {
+    width: calc(100% - 310px);
+    margin-left: 310px; /* 270px sidebar + 40px gap */
 }
 
-.profile {
-  text-align: center;
-  padding: 20px;
+.app-container.sidebar-closed .container {
+    width: calc(100% - 80px);
+    margin-left: 80px;
 }
 
-.profileImage {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+.title {
+    @apply m-0 leading-tight text-4xl text-primary;
 }
 
-.name {
-  margin-top: 10px;
-  font-size: 20px;
+.section {
+    @apply mb-5 w-full;
 }
 
-.socialIcons {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+.description {
+    @apply text-lg leading-relaxed mb-5;
 }
 
-.icon {
-  margin: 0 10px;
-  font-size: 24px;
+.list {
+    @apply list-disc pl-5;
 }
 
-.navRight {
-  text-align: center;
-  margin: 20px 0;
+.subsection {
+    @apply ml-5;
 }
 
-.searchBar {
-  width: 80%;
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
+.breadcrumbs {
+    @apply flex justify-around mb-5;
 }
 
-.separator {
-  height: 2px;
-  background-color: #3e86ce;
-  margin: 20px 0;
-  align-items: center;
+.breadcrumbs button {
+    @apply bg-none border-none text-primary cursor-pointer text-lg p-2;
 }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.breadcrumbs button.active {
+    @apply font-bold underline;
 }
 
-.navLink {
-  color: #fff;
-  text-decoration: none;
-  margin: 10px 0;
-  font-size: 18px;
+.skills-breadcrumbs {
+    @apply flex justify-around my-5 py-2 border-t border-b border-gray-300 bg-gray-100;
 }
 
-.navLink:hover {
-  text-decoration: underline;
+.skills-breadcrumbs button {
+    @apply bg-none border-none text-secondary cursor-pointer text-sm px-2.5 py-1;
+}
+
+.skills-breadcrumbs button.active {
+    @apply font-bold underline;
+}
+
+.collapsible-section {
+    @apply mb-4 border border-gray-600 rounded-lg bg-white shadow-custom-light overflow-hidden transition-all duration-300 w-full;
+    min-width: 300px; /* Set a minimum width for the collapsible sections */
+}
+
+.collapsible-section .heading4 {
+    @apply cursor-pointer p-4 bg-primary text-white m-0 text-xl flex justify-between items-center rounded-t-lg;
+}
+
+.collapsible-section .heading4:hover {
+    @apply bg-secondary text-white;
+}
+
+.collapsible-content {
+    @apply p-4 bg-white;
+}
+
+.collapsible-content ul {
+    @apply pl-5;
+}
+
+.collapsible-content li {
+    @apply mb-2;
+}
+
+.skills-section {
+    @apply flex flex-col gap-2.5;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.text-box {
+    @apply mb-4 border border-gray-600 rounded-lg bg-white shadow-custom-light p-4 transition-all duration-300;
+    min-width: 300px;
+    max-width: 450px;
+    flex: 1 1 300px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.text-box .heading4 {
+    @apply text-xl font-bold mb-2;
+}
+
+.text-box p {
+    @apply text-base;
+}
+
+.text-box p:first-of-type {
+    @apply mb-4;
+}
+
+.text-box ul {
+    margin-top: 0.5em;
+}
+
+.flex-container {
+    @apply flex flex-wrap gap-4;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .flex-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .flex-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.list-disc {
+    list-style-type: none; /* Remove default bullet points */
+}
+
+.list-disc li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.list-disc li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, #1e3a8a, #172554);
+    border-radius: 1px;
+    transition: width 0.2s ease;
+}
+
+.list-disc li:hover::before {
+    width: 16px;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.job-section {
+    @apply w-full mb-8;
+}
+
+.job-content {
+    @apply flex flex-wrap gap-4 mt-4;
 }

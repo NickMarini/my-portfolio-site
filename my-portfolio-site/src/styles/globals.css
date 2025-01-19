@@ -1,187 +1,280 @@
 /* This file contains global CSS styles that apply to the entire application. */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%; /* Ensure html and body take full height */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    background-color: #f0f0f0; /* Off White background */
-    color: #333;
+    @apply m-0 p-0 w-full h-full overflow-x-hidden font-sans bg-background text-text;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-    color: #001f3f; /* Navy blue text */
+    @apply m-0 p-0 text-primary border-b-2 border-primary;
+}
+
+h3 {
+    @apply text-2xl font-bold text-primary mb-2 border-b-2 border-primary pb-2;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+    @apply text-inherit no-underline;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+    @apply list-none p-0;
 }
 
 .app-container {
-    display: flex;
-    height: 100%; /* Ensure the container takes full height */
+    @apply flex h-full relative;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
 }
 
 .main-content {
-    flex-grow: 1;
-    padding: 40px 40px 20px 20px; /* Add padding to all sides */
-    transition: margin-left 0.3s ease;
-    background-color: #f0f0f0; /* Light background for main content */
-    color: #001f3f; /* Navy blue text */
-    margin-left: 220px; /* Default margin-left */
-    margin-right: 60px; /* Add margin to the right */
-    height: 100%; /* Ensure main content takes full height */
-    width: 100%;
-    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    @apply flex-grow bg-background text-primary;
+    padding: 2vw;
+    margin-left: calc(4vw + 1vw); /* sidebar width + gap */
+    width: 80vw;
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
 }
 
 .app-container.sidebar-open .main-content {
-    margin-left: 270px; /* 250px for sidebar + 20px margin */
+    margin-left: calc(4vw + 1vw);
+    width: calc(80vw - 11vw); /* Adjust width to fit within viewport */
 }
 
 .app-container.sidebar-closed .main-content {
-    margin-left: 40px; /* 40px margin when sidebar is closed */
+    margin-left: calc(2vw + 1vw);
+    width: calc(100vw - 3vw); /* Adjust width to fit within viewport */
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        padding-right: 8%; /* Increased right padding */
+        width: calc(100% - 8% - 2vw); /* Adjust width to account for right padding and sidebar */
+    }
+
+    .app-container.sidebar-open .main-content {
+        width: calc(100% - 20% - 10%); /* Adjusted for increased buffer */
+    }
+
+    .app-container.sidebar-closed .main-content {
+        width: calc(100% - 4% - 2%); /* Adjust width to account for right padding and sidebar */
+    }
+}
+
+.sidebar {
+    @apply fixed top-0 left-0 h-full bg-white z-10;
+    width: calc(2vw);
+    transition: width 0.3s ease-in-out;
+}
+
+.app-container.sidebar-open .sidebar {
+    width: calc(10vw);
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    justify-content: flex-start;
+    @apply flex flex-col items-start justify-start;
+    margin-left: calc(2vw + 1vw);
+    margin-right: calc(2vw + 1vw);
+    width: 80vw;
     height: 100vh;
-    width: 100%; /* Adjust based on sidebar width */
-    background-color: #f0f0f0;
-    color: #333;
-    padding-top: 60px; /* Move content down */
-    padding-left: 60px; /* Move content closer to the sidebar */
-    margin: 0; /* Ensure no extra margin */
-    border: none; /* Ensure no border */
+    padding-top: 3vw;
+    transition: all 0.3s ease-in-out;
+}
+
+.app-container.sidebar-open .container {
+    margin-left: calc(10vw + 1vw);
+    margin-right: calc(5vw + 1vw);
+    width: 80vw;
+}
+
+.app-container.sidebar-closed .container {
+    width: calc(100% - 80px);
+    margin-left: 80px;
 }
 
 .title {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 4rem;
-    color: #001f3f; /* Navy blue text */
+    @apply m-0 leading-tight text-primary;
+    font-size: 2vw;
 }
 
 .section {
-    margin-bottom: 20px;
-    width: 100%; /* Ensure sections take full width */
+    @apply mb-5 w-full;
+    margin-bottom: 1vw;
 }
 
 .description {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    @apply text-lg leading-relaxed mb-5;
 }
 
 .list {
-    list-style-type: disc;
-    padding-left: 20px;
+    @apply list-disc pl-5;
 }
 
 .subsection {
-    margin-left: 20px;
+    @apply ml-5;
 }
 
 .breadcrumbs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    @apply flex justify-around mb-5;
 }
 
 .breadcrumbs button {
-    background: none;
-    border: none;
-    color: #001f3f;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
+    @apply bg-none border-none text-primary cursor-pointer text-lg p-2;
 }
 
 .breadcrumbs button.active {
-    font-weight: bold;
-    text-decoration: underline;
+    @apply font-bold underline;
 }
 
 .skills-breadcrumbs {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-    padding: 10px 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    background-color: #f9f9f9;
+    @apply flex justify-around my-5 py-2 border-t border-b border-gray-300 bg-gray-100;
 }
 
 .skills-breadcrumbs button {
-    background: none;
-    border: none;
-    color: #0070f3;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 5px 10px;
+    @apply bg-none border-none text-secondary cursor-pointer text-sm px-2.5 py-1;
 }
 
 .skills-breadcrumbs button.active {
-    font-weight: bold;
-    text-decoration: underline;
+    @apply font-bold underline;
 }
 
 .collapsible-section {
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    width: 100%; /* Ensure collapsible sections take full width */
+    @apply mb-4 border border-gray-600 rounded-lg bg-white shadow-custom-light overflow-hidden transition-all duration-300 w-full;
+    min-width: 300px; /* Set a minimum width for the collapsible sections */
 }
 
 .collapsible-section .heading4 {
-    cursor: pointer;
-    padding: 10px 15px;
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #ddd;
-    margin: 0;
-    font-size: 1.25rem;
-    color: #001f3f; /* Navy blue text */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @apply cursor-pointer p-4 bg-primary text-white m-0 text-xl flex justify-between items-center rounded-t-lg;
 }
 
 .collapsible-section .heading4:hover {
-    background-color: #e7e7e7;
+    @apply bg-secondary text-white;
 }
 
 .collapsible-content {
-    padding: 15px;
-    background-color: #fff;
+    @apply p-4 bg-white;
 }
 
 .collapsible-content ul {
-    padding-left: 20px;
+    @apply pl-5;
 }
 
 .collapsible-content li {
-    margin-bottom: 10px;
+    @apply mb-2;
 }
 
 .skills-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    @apply flex flex-col gap-2.5;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.text-box {
+    @apply border border-gray-600 rounded-lg bg-white shadow-custom-light;
+    padding: 1vw;
+    margin-bottom: 1vw;
+    min-width: 15vw;
+    max-width: 25vw;
+    flex: 1 1 300px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.text-box .heading4 {
+    @apply text-xl font-bold mb-2;
+}
+
+.text-box p {
+    @apply text-base;
+}
+
+.text-box p:first-of-type {
+    @apply mb-4;
+}
+
+.text-box ul {
+    margin-top: 0.5em;
+}
+
+.flex-container {
+    @apply flex flex-wrap gap-4;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .flex-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .flex-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.list-disc {
+    list-style-type: none; /* Remove default bullet points */
+}
+
+.list-disc li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.list-disc li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, #1e3a8a, #172554);
+    border-radius: 1px;
+    transition: width 0.2s ease;
+}
+
+.list-disc li:hover::before {
+    width: 16px;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.job-section {
+    @apply w-full mb-8;
+}
+
+.job-content {
+    @apply flex flex-wrap gap-4 mt-4;
 }
