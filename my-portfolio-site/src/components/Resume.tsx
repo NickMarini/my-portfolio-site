@@ -14,7 +14,7 @@ const Resume: React.FC = () => {
     switch (selectedSection) {
       case 'skills':
         return (
-          <section className="flex-container">
+          <section className="flex flex-wrap gap-4">
             {renderTextBox('Programming Languages & Frameworks', (
               <ul className="list-disc pl-5">
                 <li>Python (FastAPI, PySpark, Streamlit, Dash, Plotly)</li>
@@ -116,7 +116,7 @@ const Resume: React.FC = () => {
         );
       case 'workExperience':
         return (
-          <section>
+          <section className="flex flex-wrap gap-4">
             {/* IWB Position */}
             <div className="w-full mb-12">
               <h3 className="text-2xl font-bold text-primary mb-2">Senior Data Specialist – IWB</h3>
@@ -203,7 +203,7 @@ const Resume: React.FC = () => {
         );
       case 'education':
         return (
-          <section className="flex-container">
+          <section className="flex flex-wrap gap-4">
             {renderTextBox('MSc Data Analytics - University of Portsmouth', (
               <div>
                 <p>
@@ -228,7 +228,7 @@ const Resume: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container">
       <h2 className="title text-4xl font-bold text-primary mb-4">Senior Data Specialist</h2>
       <section className="section mb-8">
         <p>

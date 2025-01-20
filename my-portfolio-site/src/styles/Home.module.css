@@ -8,7 +8,6 @@
   background-color: #f0f0f0;
   color: #333;
   padding-top: 60px; /* Move content down */
-  padding-left: 60px; /* Move content closer to the sidebar */
   margin: 0; /* Ensure no extra margin */
   border: none; /* Ensure no border */
 }

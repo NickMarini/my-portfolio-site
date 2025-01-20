@@ -11,6 +11,7 @@ module.exports = {
         secondary: '#0070f3', // Blue
         background: '#f0f0f0', // Light background
         text: '#333', // Dark text
+        navy: '#001f3f', // Navy
       },
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],

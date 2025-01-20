@@ -10,41 +10,82 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   return (
-    <aside className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-64`}>
+    <aside 
+      className={`
+        fixed top-0 left-0 h-full 
+        bg-navy bg-opacity-95 
+        w-64 transform transition-transform duration-300 ease-in-out
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+      `}
+    >
+      {/* Toggle Button */}
       <button
-        className="absolute top-4 right-[-20px] bg-gray-800 text-white p-2 rounded-full focus:outline-none"
+        className="absolute -right-10 top-4 bg-navy p-2 rounded-r-lg focus:outline-none"
         onClick={toggleSidebar}
       >
-        {isOpen ? (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 19L8 12L15 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 5L16 12L9 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        )}
+        <svg 
+          className="w-6 h-6 text-white" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          {isOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+          )}
+        </svg>
       </button>
-      <div className="flex flex-col items-center mt-8">
-        <img src="/profile.jpg" alt="Profile Picture" className="w-24 h-24 rounded-full" />
+
+      {/* Profile Section */}
+      <div className="flex flex-col items-center pt-8">
+        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white">
+          <img 
+            src="/profile.jpg" 
+            alt="Profile" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <h2 className="mt-4 text-xl font-bold text-white">Nicholas Marini</h2>
-        <div className="mt-4 flex justify-center space-x-4">
-          <Link href="https://www.linkedin.com/in/nicholasmarini" target="_blank" rel="noopener noreferrer">
+        
+        {/* Social Links */}
+        <div className="mt-4 flex space-x-6">
+          <Link 
+            href="https://www.linkedin.com/in/nicholasmarini" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-300 transition-colors"
+          >
             <FontAwesomeIcon icon={faLinkedin} className="text-2xl" />
           </Link>
-          <Link href="https://github.com/NickMarini" target="_blank" rel="noopener noreferrer">
+          <Link 
+            href="https://github.com/NickMarini" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white hover:text-blue-300 transition-colors"
+          >
             <FontAwesomeIcon icon={faGithub} className="text-2xl" />
           </Link>
         </div>
       </div>
-      <div className="mt-8 w-full px-4">
-        <hr className="border-t-4 border-gray-600 rounded-full" />
+
+      {/* Divider */}
+      <div className="mt-8 px-6">
+        <div className="h-1 bg-white rounded-full opacity-50" />
       </div>
-      <nav className="mt-8 flex flex-col items-center w-full">
-        <Link href="/" className="block py-2 text-lg w-full text-center hover:bg-gray-700 transition-colors">
+
+      {/* Navigation */}
+      <nav className="mt-8 px-6">
+        <Link 
+          href="/" 
+          className="block py-3 text-white text-lg hover:bg-white/10 rounded-lg transition-colors px-4 mb-2"
+        >
           Home
         </Link>
-        <Link href="/resume" className="block py-2 text-lg w-full text-center hover:bg-gray-700 transition-colors">
+        <Link 
+          href="/resume" 
+          className="block py-3 text-white text-lg hover:bg-white/10 rounded-lg transition-colors px-4"
+        >
           Resume
         </Link>
       </nav>
