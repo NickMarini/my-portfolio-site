@@ -14,10 +14,6 @@ h3 {
     @apply text-2xl font-bold mb-2 pb-2; /* Specific styling for h3 */
 }
 
-a {
-    @apply text-inherit no-underline; /* Inherit parent color, remove underline */
-}
-
 ul {
     @apply list-none p-0; /* Reset list styles */
 }
