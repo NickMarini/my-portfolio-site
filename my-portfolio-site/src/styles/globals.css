@@ -1,277 +1,148 @@
-/* This file contains global CSS styles that apply to the entire application. */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html, body {
-    @apply m-0 p-0 w-full h-full font-sans bg-background text-text overflow-x-hidden;
-    overflow-y: auto; /* Ensure only vertical scrolling */
+    @apply m-0 p-0 w-full h-full font-sans bg-gray-100 text-gray-800; /* Consistent text and background color */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    @apply m-0 p-0 text-primary border-b-2 border-primary;
+    @apply m-0 p-0 border-b-2 border-primary text-primary; /* Unified heading styles */
 }
 
 h3 {
-    @apply text-2xl font-bold text-primary mb-2 border-b-2 border-primary pb-2;
+    @apply text-2xl font-bold mb-2 pb-2; /* Specific styling for h3 */
 }
 
 a {
-    @apply text-inherit no-underline;
+    @apply text-inherit no-underline; /* Inherit parent color, remove underline */
 }
 
 ul {
-    @apply list-none p-0;
+    @apply list-none p-0; /* Reset list styles */
 }
 
 .app-container {
-    @apply flex relative overflow-x-hidden;
-    width: 100%;
-    max-width: 100vw;
-    height: 100vh; /* Ensure the container takes full viewport height */
-    transition: all 0.3s ease-in-out;
+    @apply w-full flex h-full relative; /* Full-height flex layout */
+}
+
+.header {
+    @apply fixed top-0 left-0 w-full bg-navy text-white z-20 shadow-md p-4; /* Navbar with fixed position and shadow */
 }
 
 .sidebar {
-    @apply fixed left-0 top-0 h-full bg-navy bg-opacity-95 text-white z-10;
-    width: 64px;
-    min-width: 64px;
-    max-width: 256px;
-    transition: width 0.3s ease-in-out;
+    @apply fixed top-0 left-0 h-full bg-navy text-white z-10 shadow-md transition-all duration-300;
+    @apply w-16 md:w-64; /* Dynamic width for different breakpoints */
 }
 
-.app-container.sidebar-open .sidebar {
-    width: 256px;
+.sidebar-content {
+    @apply pt-16; /* Space for header overlap */
 }
 
 .main-content {
-    @apply flex-1 bg-background;
-    margin-left: 80px;
-    margin-right: 2rem;
-    padding: 2rem;
-    height: 100%;
-    max-width: calc(100% - 80px - 4rem); /* account for left margin and right margin/padding */
-    transition: margin-left 0.3s ease-in-out;
-}
-
-.app-container.sidebar-open .main-content {
-    margin-left: 272px;
-    margin-right: 2rem;
-    max-width: calc(100% - 272px - 4rem);
-}
-
-@media (max-width: 1024px) {
-    .main-content {
-        margin-left: 72px;
-    }
-
-    .app-container.sidebar-open .main-content {
-        margin-left: 264px;
-    }
-}
-
-.app-container.sidebar-open .sidebar {
-    width: calc(10%);
-    max-width: 10%;
+    @apply flex flex-col w-full overflow-x-hidden bg-gray-100 overflow-y-auto p-4 mt-16; /* Main content with vertical scroll */
 }
 
 .container {
-    @apply flex flex-col items-start justify-start;
-    margin-right: 2rem;
-    width: calc(100% - 4rem);
-    height: 100vh;
-    padding-top: 3vw;
-    transition: all 0.3s ease-in-out;
-}
-
-.app-container.sidebar-open .container {
-    width: calc(100% - 80px);
-}
-
-.app-container.sidebar-closed .container {
-    width: calc(100% - 80px);
+    @apply flex flex-col w-full min-h-screen pl-8 gap-4; /* Main container with padding and gap between sections */
 }
 
 .title {
-    @apply m-0 leading-tight text-primary;
-    font-size: 2vw;
+    @apply text-4xl font-bold text-primary mb-4; /* Consistent title styling */
 }
 
 .section {
-    @apply mb-5 w-full;
-    margin-bottom: 1vw;
+    @apply flex flex-col w-full; /* Consistent section spacing */
 }
 
 .description {
-    @apply text-lg leading-relaxed mb-5;
-}
-
-.list {
-    @apply list-disc pl-5;
-}
-
-.subsection {
-    @apply ml-5;
+    @apply text-lg leading-relaxed mb-4; /* Description text with line spacing */
 }
 
 .breadcrumbs {
-    @apply flex justify-around mb-5;
+    @apply flex justify-center bg-white mb-4 rounded-lg border border-navy; /* Breadcrumb navigation with rounded corners and top/bottom navy border */
 }
 
 .breadcrumbs button {
-    @apply bg-none border-none text-primary cursor-pointer text-lg p-2;
+    @apply text-primary text-xl p-2 bg-transparent border-none cursor-pointer; /* Reset button styles */
 }
 
 .breadcrumbs button.active {
-    @apply font-bold underline;
-}
-
-.skills-breadcrumbs {
-    @apply flex justify-around my-5 py-2 border-t border-b border-gray-300 bg-gray-100;
-}
-
-.skills-breadcrumbs button {
-    @apply bg-none border-none text-secondary cursor-pointer text-sm px-2.5 py-1;
-}
-
-.skills-breadcrumbs button.active {
-    @apply font-bold underline;
+    @apply font-bold underline; /* Highlight active breadcrumb */
 }
 
 .collapsible-section {
-    @apply mb-4 border border-gray-600 rounded-lg bg-white shadow-custom-light overflow-hidden transition-all duration-300 w-full;
-    min-width: 300px; /* Set a minimum width for the collapsible sections */
+    @apply mb-4 border border-gray-300 rounded-lg bg-white shadow-lg w-full transition-all duration-300;
 }
 
 .collapsible-section .heading4 {
-    @apply cursor-pointer p-4 bg-primary text-white m-0 text-xl flex justify-between items-center rounded-t-lg;
+    @apply cursor-pointer p-4 bg-primary text-white text-xl flex justify-between items-center rounded-t-lg;
 }
 
 .collapsible-section .heading4:hover {
-    @apply bg-secondary text-white;
+    @apply bg-secondary; /* Hover effect for collapsible headings */
 }
 
 .collapsible-content {
     @apply p-4 bg-white;
 }
 
-.collapsible-content ul {
-    @apply pl-5;
-}
-
-.collapsible-content li {
-    @apply mb-2;
-}
-
-.skills-section {
-    @apply flex flex-col gap-2.5;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-@media (min-width: 640px) {
-    .grid-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
 .text-box {
-    @apply border border-gray-600 rounded-lg bg-white shadow-custom-light;
-    padding: 1vw;
-    margin-bottom: 1vw;
-    min-width: 15vw;
-    max-width: 25vw;
-    flex: 1 1 300px;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  @apply border border-gray-300 rounded-lg bg-white shadow p-4 flex flex-col;
+  @apply w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 2xl:w-1/6; /* Dynamically adjust width based on screen size */
+  @apply max-w-lg; /* Set a maximum width for readability */
 }
 
 .text-box .heading4 {
-    @apply text-xl font-bold mb-2;
+    @apply text-xl font-bold mb-2; /* Consistent heading style */
 }
 
-.text-box p {
-    @apply text-base;
+.list {
+    @apply list-disc pl-5; /* Standard unordered list */
 }
 
-.text-box p:first-of-type {
-    @apply mb-4;
+.list li {
+    @apply mb-2; /* Spacing between list items */
 }
 
-.text-box ul {
-    margin-top: 0.5em;
+.grid-container {
+    @apply grid gap-4;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default single-column grid */
+
+    @screen sm {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two columns for small screens */
+    }
+
+    @screen lg {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* Three columns for large screens */
+    }
 }
 
 .flex-container {
-    @apply flex flex-wrap gap-4;
-    width: 100%;
+    @apply flex flex-wrap gap-4; /* Flex container with consistent gap */
 }
 
-@media (min-width: 640px) {
-    .flex-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+.navbar {
+  @apply fixed top-0 left-0 w-full bg-navy text-white shadow-lg z-30 p-4;
 }
 
-@media (min-width: 1024px) {
-    .flex-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+.nav-links {
+  @apply flex justify-center gap-8;
 }
 
-.list-disc {
-    list-style-type: none; /* Remove default bullet points */
+.nav-link {
+  @apply text-lg hover:text-blue-400 transition-colors;
 }
 
-.list-disc li {
-    position: relative;
-    padding-left: 1.5em;
-    margin-bottom: 0.5em;
+.app-container.sidebar-open {
+  @apply pl-64; /* Sidebar open state */
 }
 
-.list-disc li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 2px;
-    background: linear-gradient(90deg, #1e3a8a, #172554);
-    border-radius: 1px;
-    transition: width 0.2s ease;
+.app-container.sidebar-closed {
+  @apply pl-16; /* Sidebar closed state */
 }
 
-.list-disc li:hover::before {
-    width: 16px;
-}
-
-.mb-8 {
-    margin-bottom: 2rem;
-}
-
-.mb-6 {
-    margin-bottom: 1.5rem;
-}
-
-.mb-2 {
-    margin-bottom: 0.5rem;
-}
-
-.job-section {
-    @apply w-full mb-8;
-}
-
-.job-content {
-    @apply flex flex-wrap gap-4 mt-4;
+.grid-container {
+  @apply grid gap-6; /* Grid with spacing between items */
+  @apply grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4; /* Responsive columns */
 }

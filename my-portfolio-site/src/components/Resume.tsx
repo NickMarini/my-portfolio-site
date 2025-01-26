@@ -4,7 +4,7 @@ const Resume: React.FC = () => {
   const [selectedSection, setSelectedSection] = useState('workExperience');
 
   const renderTextBox = (title: string, content: JSX.Element) => (
-    <div className="text-box">
+    <div className="text-box mb-4">
       <h4 className="heading4">{title}</h4>
       {content}
     </div>
@@ -14,116 +14,118 @@ const Resume: React.FC = () => {
     switch (selectedSection) {
       case 'skills':
         return (
-          <section className="flex flex-wrap gap-4">
-            {renderTextBox('Programming Languages & Frameworks', (
-              <ul className="list-disc pl-5">
-                <li>Python (FastAPI, PySpark, Streamlit, Dash, Plotly)</li>
-                <li>Scala</li>
-                <li>JavaScript</li>
-                <li>SQL (PostgreSQL, MSSQL, Redshift, Oracle)</li>
-                <li>NoSQL (MongoDB)</li>
-                <li>PySpark</li>
-                <li>Apache Spark</li>
-                <li>Structured Streaming</li>
-                <li>MLFlow</li>
-                <li>Delta Lake</li>
-              </ul>
-            ))}
-            {renderTextBox('Data Engineering & ETL', (
-              <ul className="list-disc pl-5">
-                <li>ETL Pipelines and Triggers</li>
-                <li>Azure Data Factory</li>
-                <li>Logic Apps</li>
-                <li>Function Apps</li>
-                <li>Hadoop</li>
-                <li>Apache Spark</li>
-                <li>Databricks</li>
-                <li>Kafka</li>
-                <li>Events Hub</li>
-                <li>Structured Streaming</li>
-              </ul>
-            ))}
-            {renderTextBox('Cloud Platforms & Services', (
-              <ul className="list-disc pl-5">
-                <li>AWS</li>
-                <li>Azure</li>
-                <li>GCP</li>
-                <li>Databricks</li>
-                <li>Snowflake</li>
-                <li>Palantir</li>
-                <li>Azure Data Factory</li>
-                <li>APIM</li>
-                <li>Events Hub</li>
-                <li>Logic Apps</li>
-                <li>Function Apps</li>
-              </ul>
-            ))}
-            {renderTextBox('Data Visualization & BI Tools', (
-              <ul className="list-disc pl-5">
-                <li>Power BI</li>
-                <li>Tableau</li>
-                <li>QlikSense</li>
-                <li>Grafana</li>
-                <li>Streamlit</li>
-                <li>Dash</li>
-                <li>Plotly</li>
-              </ul>
-            ))}
-            {renderTextBox('DevOps & CI/CD', (
-              <ul className="list-disc pl-5">
-                <li>Azure DevOps</li>
-                <li>GitHub Actions</li>
-                <li>Git</li>
-                <li>Jira</li>
-                <li>Confluence</li>
-                <li>MLFlow</li>
-                <li>FastAPI</li>
-              </ul>
-            ))}
-            {renderTextBox('Data Streaming & Real-Time Processing', (
-              <ul className="list-disc pl-5">
-                <li>Kafka</li>
-                <li>Structured Streaming</li>
-                <li>Apache Flink</li>
-              </ul>
-            ))}
-            {renderTextBox('Data Architecture & Governance', (
-              <ul className="list-disc pl-5">
-                <li>Data Architecture</li>
-                <li>Delta Lake Design</li>
-                <li>Data Governance</li>
-                <li>Cost Control and Optimizations</li>
-                <li>Cross-Functional Collaboration</li>
-              </ul>
-            ))}
-            {renderTextBox('Business Intelligence & Reporting', (
-              <ul className="list-disc pl-5">
-                <li>Power BI</li>
-                <li>Tableau</li>
-                <li>QlikSense</li>
-                <li>Grafana</li>
-              </ul>
-            ))}
-            {renderTextBox('Advanced Skills & Specializations', (
-              <ul className="list-disc pl-5">
-                <li>MLOps practices</li>
-                <li>MLFlow</li>
-                <li>Cost Control and Efficiency</li>
-                <li>Cross-Functional Team Leadership</li>
-              </ul>
-            ))}
+          <section className="section mb-8">
+            <div className="flex-container">
+              {renderTextBox('Programming Languages & Frameworks', (
+                <ul className="list-disc pl-5">
+                  <li>Python (FastAPI, PySpark, Streamlit, Dash, Plotly)</li>
+                  <li>Scala</li>
+                  <li>JavaScript</li>
+                  <li>SQL (PostgreSQL, MSSQL, Redshift, Oracle)</li>
+                  <li>NoSQL (MongoDB)</li>
+                  <li>PySpark</li>
+                  <li>Apache Spark</li>
+                  <li>Structured Streaming</li>
+                  <li>MLFlow</li>
+                  <li>Delta Lake</li>
+                </ul>
+              ))}
+              {renderTextBox('Data Engineering & ETL', (
+                <ul className="list-disc pl-5">
+                  <li>ETL Pipelines and Triggers</li>
+                  <li>Azure Data Factory</li>
+                  <li>Logic Apps</li>
+                  <li>Function Apps</li>
+                  <li>Hadoop</li>
+                  <li>Apache Spark</li>
+                  <li>Databricks</li>
+                  <li>Kafka</li>
+                  <li>Events Hub</li>
+                  <li>Structured Streaming</li>
+                </ul>
+              ))}
+              {renderTextBox('Cloud Platforms & Services', (
+                <ul className="list-disc pl-5">
+                  <li>AWS</li>
+                  <li>Azure</li>
+                  <li>GCP</li>
+                  <li>Databricks</li>
+                  <li>Snowflake</li>
+                  <li>Palantir</li>
+                  <li>Azure Data Factory</li>
+                  <li>APIM</li>
+                  <li>Events Hub</li>
+                  <li>Logic Apps</li>
+                  <li>Function Apps</li>
+                </ul>
+              ))}
+              {renderTextBox('Data Visualization & BI Tools', (
+                <ul className="list-disc pl-5">
+                  <li>Power BI</li>
+                  <li>Tableau</li>
+                  <li>QlikSense</li>
+                  <li>Grafana</li>
+                  <li>Streamlit</li>
+                  <li>Dash</li>
+                  <li>Plotly</li>
+                </ul>
+              ))}
+              {renderTextBox('DevOps & CI/CD', (
+                <ul className="list-disc pl-5">
+                  <li>Azure DevOps</li>
+                  <li>GitHub Actions</li>
+                  <li>Git</li>
+                  <li>Jira</li>
+                  <li>Confluence</li>
+                  <li>MLFlow</li>
+                  <li>FastAPI</li>
+                </ul>
+              ))}
+              {renderTextBox('Data Streaming & Real-Time Processing', (
+                <ul className="list-disc pl-5">
+                  <li>Kafka</li>
+                  <li>Structured Streaming</li>
+                  <li>Apache Flink</li>
+                </ul>
+              ))}
+              {renderTextBox('Data Architecture & Governance', (
+                <ul className="list-disc pl-5">
+                  <li>Data Architecture</li>
+                  <li>Delta Lake Design</li>
+                  <li>Data Governance</li>
+                  <li>Cost Control and Optimizations</li>
+                  <li>Cross-Functional Collaboration</li>
+                </ul>
+              ))}
+              {renderTextBox('Business Intelligence & Reporting', (
+                <ul className="list-disc pl-5">
+                  <li>Power BI</li>
+                  <li>Tableau</li>
+                  <li>QlikSense</li>
+                  <li>Grafana</li>
+                </ul>
+              ))}
+              {renderTextBox('Advanced Skills & Specializations', (
+                <ul className="list-disc pl-5">
+                  <li>MLOps practices</li>
+                  <li>MLFlow</li>
+                  <li>Cost Control and Efficiency</li>
+                  <li>Cross-Functional Team Leadership</li>
+                </ul>
+              ))}
+            </div>
           </section>
         );
       case 'workExperience':
         return (
-          <section className="flex flex-wrap gap-4">
+          <section className="section mb-8">
             {/* IWB Position */}
             <div className="w-full mb-12">
               <h3 className="text-2xl font-bold text-primary mb-2">Senior Data Specialist – IWB</h3>
               <p className="text-sm text-gray-600 mb-2">Oct 2023 – Current</p>
               <p className="mb-6">Providing strategic leadership on data management and ML operations across the trading division, I am responsible for the end to end collection of relevant information and its consumption for analysis, reporting, and operations. Head of a team of 5 engineers, 3 BI Developers, 4 data scientists, and 10 analysts my role covers Architectural Decision Making, Data Governance, ML Engineering and MLOps, Cost Control and Optimisations, along with Cross-Functional Collaboration with different departments.</p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex-container">
                 {renderTextBox('Tech Stack', (
                   <ul className="list-disc pl-5">
                     <li>Apache Spark, Structured Streaming, Hadoop</li>
@@ -153,7 +155,7 @@ const Resume: React.FC = () => {
               <p className="text-sm text-gray-600 mb-2">Jan 2021 – September 2023</p>
               <p className="mb-6">Leading business intelligence development across key initiatives within the Swiss Banking Risk Reporting division. I was responsible for harmonising data from multiple sources into the strategic data platform (Palantir) and automating reporting through various tools, such as QlikSense, Tableau, and PowerBI, powered by the data held in our data mart.</p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex-container">
                 {renderTextBox('Tech Stack', (
                   <ul className="list-disc pl-5">
                     <li>Apache Ecosystem (Spark, Structured Streaming, Hadoop)</li>
@@ -189,7 +191,7 @@ const Resume: React.FC = () => {
                 Solutions focused around data collection, processing, and reporting, which allowed for a more targeted and effective marketing campaign.
               </p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex-container">
                 {renderTextBox('Tech Stack', (
                   <ul className="list-disc pl-5">
                     <li>AWS Infrastructure</li>
@@ -254,23 +256,25 @@ const Resume: React.FC = () => {
         );
       case 'education':
         return (
-          <section className="flex flex-wrap gap-4">
-            {renderTextBox('MSc Data Analytics - University of Portsmouth', (
-              <div>
-                <p>
-                  Covering a wide range of technical and non technical concepts including ML and Deep Learning Models, Data Infrastructure for Big Data, Data Team Management.
-                </p>
-                <p><strong>Thesis:</strong> Tested the effected of pre-clustering time series based on similarity of profile to create custom models for different profiles based on volatility and seasonality. The test was successful, pre-clustering positively effects model results.</p>
-              </div>
-            ))}
-            {renderTextBox('BSc (Hons) Information Systems – University of Portsmouth', (
-              <div>
-                <p>
-                  Advanced Systems Development, Information Systems Management, Project Management (SCRUM, AGILE, RAD), and Advanced Database Concepts.
-                </p>
-                <p><strong>Thesis:</strong> Designed and built a SaaS system which records and tracks stock price on a 5-minute interval, the system would record social media sentiment at the time towards the company and look for a change in sentiment which would pre-empt a sudden change in stock price. For example, Facebook during the Cambridge Analytica news scandal in 2017.</p>
-              </div>
-            ))}
+          <section className="section mb-8">
+            <div className="flex-container">
+              {renderTextBox('MSc Data Analytics - University of Portsmouth', (
+                <div>
+                  <p>
+                    Covering a wide range of technical and non technical concepts including ML and Deep Learning Models, Data Infrastructure for Big Data, Data Team Management.
+                  </p>
+                  <p><strong>Thesis:</strong> Tested the effected of pre-clustering time series based on similarity of profile to create custom models for different profiles based on volatility and seasonality. The test was successful, pre-clustering positively effects model results.</p>
+                </div>
+              ))}
+              {renderTextBox('BSc (Hons) Information Systems – University of Portsmouth', (
+                <div>
+                  <p>
+                    Advanced Systems Development, Information Systems Management, Project Management (SCRUM, AGILE, RAD), and Advanced Database Concepts.
+                  </p>
+                  <p><strong>Thesis:</strong> Designed and built a SaaS system which records and tracks stock price on a 5-minute interval, the system would record social media sentiment at the time towards the company and look for a change in sentiment which would pre-empt a sudden change in stock price. For example, Facebook during the Cambridge Analytica news scandal in 2017.</p>
+                </div>
+              ))}
+            </div>
           </section>
         );
       default:
@@ -286,7 +290,7 @@ const Resume: React.FC = () => {
           As a data architect and engineer with 10 years of experience, I have developed data-driven reporting solutions across multiple business areas and industries, from marketing to finance. I consider myself tool agnostic as I have experience across various technology stacks, Microsoft's Azure (ADF, Events Hub, APIM, Azure Apps, SQL Server, and Power BI amongst others), and Amazon Web Services (AWS) stack (Redshift, Glue, and Quicksight etc.), along with Databricks, Snowflake, and Palantir, to name a few.
         </p>
       </section>
-      <nav className="breadcrumbs flex justify-around mb-8">
+      <nav className="breadcrumbs flex flex-row w-full justify-center mb-8">
         <button className={`px-4 py-2 ${selectedSection === 'workExperience' ? 'font-bold underline' : ''}`} onClick={() => setSelectedSection('workExperience')}>Work Experience</button>
         <button className={`px-4 py-2 ${selectedSection === 'education' ? 'font-bold underline' : ''}`} onClick={() => setSelectedSection('education')}>Education</button>
         <button className={`px-4 py-2 ${selectedSection === 'skills' ? 'font-bold underline' : ''}`} onClick={() => setSelectedSection('skills')}>Skills</button>
