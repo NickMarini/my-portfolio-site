@@ -149,7 +149,7 @@ const Resume: React.FC = () => {
 
             {/* Credit Suisse Position */}
             <div className="w-full mb-12">
-              <h3 className="text-2xl font-bold text-primary mb-2">Business Intelligence Solutions Engineer (AVP) – Credit Suisse</h3>
+              <h3 className="text-2xl font-bold text-primary mb-2">Business Intelligence Solutions Engineer (AVP) – Credit Suisse/UBS</h3>
               <p className="text-sm text-gray-600 mb-2">Jan 2021 – September 2023</p>
               <p className="mb-6">Leading business intelligence development across key initiatives within the Swiss Banking Risk Reporting division. I was responsible for harmonising data from multiple sources into the strategic data platform (Palantir) and automating reporting through various tools, such as QlikSense, Tableau, and PowerBI, powered by the data held in our data mart.</p>
               
@@ -166,15 +166,28 @@ const Resume: React.FC = () => {
                     <li>MLFlow</li>
                   </ul>
                 ))}
+                {renderTextBox('Project - Data On Demand', (
+                  <p>Servicing the reporting on demand service within the division. Data on demand allowed for users to run various data pipelines and perform
+                    validation checks on the data they were using. The service was built on top of the data warehousing solution in Palantir.
+                    Data on demand was a key service for the division and was built to audit level standards allowing for clear transparency of the data pipeline and all alterations to the data.
+                  </p>
+                ))}
+                {renderTextBox('Project - Share Backed Lending (SBL) Reporting', (
+                  <p>Established a framework for accurately reporting SBL risk exposure of the Swiss Banking Division. Introduced more stringent margin measures and RAG alerting across the current portfolio.
+                    The results were a more accurate and timely reporting of risk exposure, which allowed for better risk management and a reduction in risk exposure by 10%.
+                  </p>
+                ))}
               </div>
             </div>
 
             {/* TVSquared Position */}
             <div className="w-full mb-12">
-              <h3 className="text-2xl font-bold text-primary mb-2">Data Engineer and Analyst – TVSquared</h3>
+              <h3 className="text-2xl font-bold text-primary mb-2">Global Support Process Analyst – TVSquared</h3>
               <p className="text-sm text-gray-600 mb-2">Aug 2017 – Dec 2022</p>
-              <p className="mb-6">SaaS company with Client Services Team situated across UK, USA, and Germany. Supporting approx. 1000 clients across 70 countries.</p>
-              <p className="mb-6">Collaborated with an analyst team to provide comprehensive support to global clients utilizing our SaaS reporting tools. My role involved extensive use of technical skills for data assessment and analysis, along with exceptional client-facing abilities.</p>
+              <p className="mb-6">Direct marketing service provider to the financial and insurance industries in South Africa.</p>
+              <p className="mb-6">Designed and managed the implementation of client focused solutions enabling their direct marketing campaigns.
+                Solutions focused around data collection, processing, and reporting, which allowed for a more targeted and effective marketing campaign.
+              </p>
               
               <div className="flex flex-wrap gap-4">
                 {renderTextBox('Tech Stack', (
@@ -186,18 +199,56 @@ const Resume: React.FC = () => {
                     <li>Custom In-house Applications</li>
                   </ul>
                 ))}
+                {renderTextBox('Project - BI Reporting System', (
+                  <p>Designed, modelled, and developed measurement and 
+                  reporting solutions which enabled the collection of data from various data sources (ticket system, 
+                  Salesforce, Postgres and Mongo databases, etc.) and produced clear reports based on company 
+                  objectives and KPI’s for management and C-level decision making.</p>
+                ))}
+                {renderTextBox('Project - Product and System Analysis', (
+                  <p>Investigated high-value problem areas and categorised clients by processing 
+                    requirements. Optimised processing and load balancing to ensure smoother, more efficient 
+                    processing of data, and product delivery. The results were focused optimisations and enhancements which led 
+                    to a decrease in processing times, in some cases a 90% saving was made.</p>
+                ))}
+                {renderTextBox('Project - Integration Partner Lead', (
+                  <p>Technical contact for all integration partners – Designed and implemented postbacks and other API 
+                    services allowing our partners to push and get required data into and out of the TVSquared system</p>
+                ))}
               </div>
             </div>
 
             {/* Computer Facilities Positions */}
             <div className="w-full mb-12">
               <h3 className="text-2xl font-bold text-primary mb-2">Business Analyst and Project Manager – Computer Facilities (Pty) Ltd</h3>
-              <p className="text-sm text-gray-600 mb-2">Jan 2009 – Mar 2017</p>
+              <p className="text-sm text-gray-600 mb-2">Jan 2011 – Mar 2017</p>
+              <p className="mb-6">Direct marketing service provider to the financial and insurance industries in South Africa.</p>
+              <p className="mb-6">Designed and managed the implementation of client focused solutions enabling their direct marketing campaigns.
+                Solutions focused around data collection, processing, and reporting, which allowed for a more targeted and effective marketing campaign.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                {renderTextBox('Tech Stack', (
+                  <ul className="list-disc pl-5">
+                    <li>On Prem Microsoft Server</li>
+                    <li>Python</li>
+                    <li>C#</li>
+                    <li>Databases (Microsoft SQL Server)</li>
+                    <li>Custom In-house Applications</li>
+                  </ul>
+                ))}
+                {renderTextBox('Project - SMS and E-mail Campaign System', (
+                  <p>Designed, modelled, and managed the implementation of a custom SMS and E-mail 
+                    campaign management tool which offered a closed portal for clients to manage their own campaigns, and track results.
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div className="w-full mb-12">
               <h3 className="text-2xl font-bold text-primary mb-2">Campaign Manager – Computer Facilities (Pty) Ltd</h3>
               <p className="text-sm text-gray-600 mb-2">Jan 2009 – Jan 2011</p>
+              <p className="mb-6">Led client campaigns delivering SMS, E-mail, MMS, and direct mail marketing communications across South Africa.</p>
             </div>
           </section>
         );
