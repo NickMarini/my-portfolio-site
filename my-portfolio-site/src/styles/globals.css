@@ -178,9 +178,19 @@ ul {
   @apply grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4; /* Responsive columns */
 }
 
-/* Add this alternative helper for hero headings */
+/* alternative helper for hero headings */
 .hero-heading {
   @apply text-white;
+  text-shadow: 
+    -1px -1px 0 #1f2937,  
+     1px -1px 0 #1f2937,
+    -1px  1px 0 #1f2937,
+     1px  1px 0 #1f2937;
 }
+
+.score-block {
+  @apply w-4 h-4 border border-white bg-blue-300 rounded;
+}
+
 
 

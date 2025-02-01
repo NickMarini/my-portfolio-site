@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ScoreBlocks from './ScoreBlocks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -17,7 +18,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}
     >
-      {/* Sidebar Content */}
       <div className="sidebar-content flex flex-col h-full">
         {/* Toggle Button */}
         <button
@@ -57,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <h2 className="mt-4 text-xl font-bold text-center">Nicholas Marini</h2>
+          <h2 className="mt-4 text-xl text-white font-bold text-center">Nicholas Marini</h2>
 
           {/* Social Links */}
           <div className="mt-4 flex space-x-4">
@@ -81,30 +81,51 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         </div>
 
         {/* Divider */}
-        <div className="mt-6 px-6">
-          <div className="h-px bg-white/50 rounded-full" />
+        <div className="mt-8 px-6">
+          <div className="h-1 bg-white rounded-full opacity-50" />
         </div>
 
-        {/* Navigation Links */}
-        <nav className="mt-6 flex-grow px-6">
-          <Link
-            href="/"
-            className="block py-3 text-lg px-4 rounded-lg hover:bg-white/10 transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="/resume"
-            className="block py-3 text-lg px-4 rounded-lg hover:bg-white/10 transition-colors"
-          >
-            Resume
-          </Link>
-        </nav>
+        {/* Domain Expertise Summary */}
+        <div className="mt-8 px-6">
+          <h3 className="text-xl font-bold text-white mb-1">Data Architecture</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={9} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">Data Engineering</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={10} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">Databases</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={10} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">Data Science</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={9} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">Data Analytics</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={9} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">ML Ops</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={8} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">Back-End Dev</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={8} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">Front-End Dev</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={4} />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">Dev Ops</h3>
+          <div className="flex space-x-1 mb-4">
+            <ScoreBlocks count={6} />
+          </div>
+        </div>
 
-        {/* Footer */}
-        <footer className="px-6 py-4 text-sm text-center bg-navy/80">
-          <p className="opacity-75">© 2025 Nicholas Marini</p>
-        </footer>
+        {/* Remove Navigation Section */}
       </div>
     </aside>
   );
