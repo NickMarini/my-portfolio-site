@@ -5,17 +5,31 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
     './src/**/*.{js,ts,jsx,tsx}', // Include files in `src` if used
   ],
+  darkMode: false,
   theme: {
     extend: {
       colors: {
-        primary: '#001f3f', // Navy blue
-        secondary: '#0070f3', // Blue
-        background: '#f0f0f0', // Light background
-        text: '#333', // Dark text
-        navy: '#001f3f', // Navy
+        primary: '#001f3f',
+        secondary: '#0070f3',
+        background: '#f0f0f0',
+        text: '#333',
+        navy: '#001f3f',
       },
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'Noto Sans',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+          'Noto Color Emoji',
+        ],
       },
       borderWidth: {
         DEFAULT: '1px',
@@ -32,4 +46,5 @@ module.exports = {
   },
   plugins: [],
 };
+
 

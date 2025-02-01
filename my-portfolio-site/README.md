@@ -1,26 +1,26 @@
 # My Portfolio Site
 
-// This is the title of your project.
-
-This is a simple portfolio site built with Next.js. It showcases my projects and provides information about me.
-
-// This section gives a brief description of your project.
+This portfolio site is built with Next.js and Tailwind CSS. It showcases my professional projects, skills, and experience using a clean, modern, and responsive design.
 
 ## Features
 
-// This section lists the main features of your portfolio site.
-
-- Home page with an overview of my work
-- About page with details about my background and skills
-- Responsive design
+- **Responsive Design:** Adapts to various devices and viewport sizes.
+- **Dynamic Content:** Seamlessly navigate between pages like Home, Resume, and About.
+- **Custom Sidebar & Header:** Smooth animations with a toggleable sidebar and a fixed header with navigation.
+- **Modern Technologies:** Developed with Next.js for server-side rendering and Tailwind CSS for rapid styling.
 
 ## Getting Started
 
-// This section provides instructions on how to set up the project locally.
+Follow these instructions to set up and run the project locally.
 
-To get a local copy up and running, follow these steps:
+### Prerequisites
 
-1. Clone the repository
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/my-portfolio-site.git
    ```
@@ -48,7 +48,7 @@ To get a local copy up and running, follow these steps:
 
 // This section provides instructions on how to deploy the project.
 
-To deploy the site to GitHub Pages, follow these steps:
+To deploy the site to Vercel, follow these steps:
 
 1. Build the project
    ```bash
@@ -56,8 +56,8 @@ To deploy the site to GitHub Pages, follow these steps:
    ```
    // This command creates an optimized production build of the project.
 
-2. Deploy to GitHub Pages using a package like `gh-pages` or manually push the `out` directory to the `gh-pages` branch.
-   // This step involves deploying the built project to GitHub Pages.
+2. Deploy to Vercel
+   // This step involves deploying the built project to Vercel. You can do this by connecting your GitHub repository to Vercel and following their deployment instructions.
 
 ## License
 
