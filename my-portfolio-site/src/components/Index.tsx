@@ -8,12 +8,12 @@ const HomePage = () => {
         className="hero bg-cover bg-center text-white h-[600px] flex flex-col justify-end items-start px-8"
         style={{ backgroundImage: 'url("/data-image.jpg")' }}
       >
-        {/* Use the alternative class to enforce white text */}
-        <h1 className="hero-heading text-5xl font-extrabold mb-4">
+        {/* Use the alternative class to enforce white text and underline in white */}
+        <h1 className="hero-heading text-white underline decoration-white text-5xl font-extrabold mb-4">
           Welcome to My Portfolio
         </h1>
         <p className="text-lg mb-8 max-w-xl">
-          I am so happy that you are here to see my work. Feel free to explore and learn more about what I do.
+          I am so happy that you are here to see my work. Feel free to explore and learn more about what I do. Note how much I am not a front end developer.
         </p>
       </section>
 
