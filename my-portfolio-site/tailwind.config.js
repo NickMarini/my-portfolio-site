@@ -1,18 +1,35 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}', // Include files in `src` if used
+  ],
+  darkMode: false,
   theme: {
     extend: {
       colors: {
-        primary: '#001f3f', // Navy blue
-        secondary: '#0070f3', // Blue
-        background: '#f0f0f0', // Light background
-        text: '#333', // Dark text
-        navy: '#001f3f', // Navy
+        primary: '#001f3f',
+        secondary: '#0070f3',
+        background: '#f0f0f0',
+        text: '#333',
+        navy: '#001f3f',
       },
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'Noto Sans',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+          'Noto Color Emoji',
+        ],
       },
       borderWidth: {
         DEFAULT: '1px',
@@ -24,9 +41,11 @@ module.exports = {
       boxShadow: {
         'custom-light': '0 2px 4px rgba(0, 0, 0, 0.1)',
         'custom-dark': '0 2px 4px rgba(0, 0, 0, 0.2)',
+        xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
       },
     },
   },
   plugins: [],
 };
+
 
